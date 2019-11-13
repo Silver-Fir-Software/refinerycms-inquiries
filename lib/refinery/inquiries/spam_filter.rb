@@ -80,7 +80,7 @@ module Refinery
 
       def send_notification_email!
         begin
-          InquiryMailer.notification(@inquiry, @request).deliver_now
+          InquiryMailer.notification(@inquiry, @request).deliver
         rescue
           Rails.logger.warn "There was an error delivering an inquiry notification.\n#{$!}\n"
         end
@@ -89,7 +89,7 @@ module Refinery
       def send_confirmation_email!
         if Setting.send_confirmation?
           begin
-            InquiryMailer.confirmation(@inquiry, @request).deliver_now
+            InquiryMailer.confirmation(@inquiry, @request).deliver
           rescue
             Rails.logger.warn "There was an error delivering an inquiry confirmation:\n#{$!}\n"
           end
