@@ -2,12 +2,12 @@ source 'https://rubygems.org'
 
 gemspec
 
-git "https://github.com/refinery/refinerycms", branch: "master" do
-  gem "refinerycms"
+gem "refinerycms", "~> 4.0"
+gem "pry"
+gem "mobility"
 
-  group :test do
-    gem "refinerycms-testing"
-  end
+group :test do
+  gem "refinerycms-testing", "~> 4.0"
 end
 
 group :development do
